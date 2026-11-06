@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+
+# Generated test artifacts
+reports/*
+!reports/.gitkeep
+screenshots/*
+!screenshots/.gitkeep
+test-results/
+playwright-report/
+blob-report/
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/

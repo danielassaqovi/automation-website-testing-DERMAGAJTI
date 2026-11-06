@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Universal QA Demo Site</title>
+  <meta name="description" content="A small safe website used to validate the Universal Website Testing Tool.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Universal QA Demo</a>
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="missing-page.html">Broken link (intentional)</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Universal Website Testing Demo</h1>
+    <p>
+      This website is intentionally small and safe. It contains a few known issues so the
+      Universal Website Testing Tool can demonstrate PASS, FAIL, screenshots, and error details
+      without touching a real production website.
+    </p>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Working image</h2>
+        <img src="assets/logo.svg" alt="Universal QA demo logo" width="240" height="120">
+        <p>The SVG above should load and has alternative text.</p>
+      </section>
+
+      <section class="card">
+        <h2>Broken image</h2>
+        <img src="assets/missing-image.png" alt="Intentionally broken image" width="240" height="120">
+        <p>This image is intentionally missing to produce a FAIL result.</p>
+      </section>
+    </div>
+
+    <section class="card">
+      <h2>Intentional accessibility issue</h2>
+      <p>The small logo below intentionally has no <code>alt</code> attribute.</p>
+      <img src="assets/logo.svg" width="48" height="48">
+    </section>
+
+    <section class="card">
+      <h2>Contact form (never submitted)</h2>
+      <p>
+        The testing tool only inspects forms. It never fills or submits them.
+        The "Company" field is intentionally missing a label.
+      </p>
+      <form action="contact.html" method="get">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required autocomplete="name">
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required autocomplete="email">
+        </div>
+        <div class="form-row">
+          <input name="company" type="text" placeholder="Company (intentionally unlabeled)">
+        </div>
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+        <button type="submit">Send message</button>
+      </form>
+    </section>
+
+    <div class="notice">
+      <strong>Intentional failures:</strong> broken internal link, broken image, missing alt text,
+      unlabeled form control, one console error, and one uncaught page error.
+    </div>
+
+    <p>
+      External link (not crawled as an internal link):
+      <a href="https://example.com" rel="noreferrer">example.com</a>
+    </p>
+  </main>
+
+  <footer>
+    <div class="container">
+      Local demo content for read-only QA validation. No real data is collected.
+    </div>
+  </footer>
+
+  <script>
+    console.error('Intentional demo console error: universal website testing console check.');
+    setTimeout(function () {
+      throw new Error('Intentional demo page error: universal website testing page error check.');
+    }, 150);
+  </script>
+</body>
+</html>

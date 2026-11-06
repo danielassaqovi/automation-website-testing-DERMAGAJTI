@@ -1,0 +1,59 @@
+name: universal-website-testing
+
+services:
+  playwright:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: universal-website-testing:latest
+    init: true
+    ipc: host
+    shm_size: "1gb"
+    environment:
+      TARGET_URL: ${TARGET_URL:-}
+      BROWSER: ${BROWSER:-chromium}
+      IGNORE_HTTPS_ERRORS: ${IGNORE_HTTPS_ERRORS:-false}
+      TARGET_HOST_ALLOWLIST: ${TARGET_HOST_ALLOWLIST:-}
+      TEST_TIMEOUT_MS: ${TEST_TIMEOUT_MS:-120000}
+      NAV_TIMEOUT_MS: ${NAV_TIMEOUT_MS:-30000}
+      ACTION_TIMEOUT_MS: ${ACTION_TIMEOUT_MS:-10000}
+      EXPECT_TIMEOUT_MS: ${EXPECT_TIMEOUT_MS:-7000}
+      LINK_CHECK_TIMEOUT_MS: ${LINK_CHECK_TIMEOUT_MS:-15000}
+      RENDER_WAIT_MS: ${RENDER_WAIT_MS:-500}
+      MAX_PAGES: ${MAX_PAGES:-10}
+      MAX_DEPTH: ${MAX_DEPTH:-1}
+      MAX_LINKS: ${MAX_LINKS:-50}
+      MAX_IMAGES: ${MAX_IMAGES:-50}
+      MAX_FORMS: ${MAX_FORMS:-10}
+      SKIP_URL_PATTERNS: ${SKIP_URL_PATTERNS:-logout,signout,sign-out,delete,remove,unsubscribe,checkout,place-order}
+      DETECT_SOFT_404: ${DETECT_SOFT_404:-false}
+      FAIL_ON_CONSOLE_ERRORS: ${FAIL_ON_CONSOLE_ERRORS:-true}
+      FAIL_ON_PAGE_ERRORS: ${FAIL_ON_PAGE_ERRORS:-true}
+      CONSOLE_ERROR_IGNORE_PATTERNS: ${CONSOLE_ERROR_IGNORE_PATTERNS:-}
+      PAGE_ERROR_IGNORE_PATTERNS: ${PAGE_ERROR_IGNORE_PATTERNS:-}
+      PERF_DOMCONTENTLOADED_MAX_MS: ${PERF_DOMCONTENTLOADED_MAX_MS:-6000}
+      PERF_LOAD_MAX_MS: ${PERF_LOAD_MAX_MS:-12000}
+      OVERFLOW_TOLERANCE_PX: ${OVERFLOW_TOLERANCE_PX:-2}
+      CLEAN_OUTPUT: ${CLEAN_OUTPUT:-true}
+    volumes:
+      - ./reports:/app/reports
+      - ./screenshots:/app/screenshots
+    extra_hosts:
+      # Allows TARGET_URL=http://host.docker.internal:3000 on Linux and Docker Desktop.
+      - "host.docker.internal:host-gateway"
+
+  # Optional safe local demo website used to validate the tool:
+  #   docker compose --profile demo up -d --wait demo
+  #   TARGET_URL=http://demo docker compose run --rm playwright
+  demo:
+    image: nginx:alpine
+    profiles: ["demo"]
+    ports:
+      - "${DEMO_PORT:-8080}:80"
+    volumes:
+      - ./demo-site:/usr/share/nginx/html:ro
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost/ >/dev/null 2>&1 || exit 1"]
+      interval: 2s
+      timeout: 3s
+      retries: 15
