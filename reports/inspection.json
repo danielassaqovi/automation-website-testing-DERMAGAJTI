@@ -1,0 +1,17 @@
+{
+  "reachable": true,
+  "ok": true,
+  "httpStatus": 200,
+  "statusText": "",
+  "finalUrl": "https://jti.polinema.ac.id/dermaga/",
+  "redirected": true,
+  "contentType": "text/html; charset=UTF-8",
+  "contentLength": "1954",
+  "server": "LiteSpeed",
+  "title": "Login | DERMAGA JTI",
+  "htmlBytes": 7540,
+  "responseTimeMs": 1345,
+  "error": null,
+  "checkedAt": "2026-11-06T07:58:54.089Z",
+  "targetUrl": "https://jti.polinema.ac.id/dermaga"
+}

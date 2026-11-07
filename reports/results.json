@@ -1,0 +1,1182 @@
+{
+  "config": {
+    "argv": [
+      "/usr/bin/node",
+      "/app/node_modules/@playwright/test/cli.js",
+      "test"
+    ],
+    "configFile": "/app/playwright.config.js",
+    "rootDir": "/app/src/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": true,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "tool": "Universal Website Testing Tool",
+      "targetUrl": "https://jti.polinema.ac.id/dermaga",
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/app/reports/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "tool": "Universal Website Testing Tool",
+          "targetUrl": "https://jti.polinema.ac.id/dermaga",
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/app/src/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.js"
+        ],
+        "timeout": 120000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/app/reports/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "tool": "Universal Website Testing Tool",
+          "targetUrl": "https://jti.polinema.ac.id/dermaga",
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/app/src/tests",
+        "snapshotDir": "/app/src/tests",
+        "testIgnore": [],
+        "testMatch": "**/*.spec.js",
+        "timeout": 120000,
+        "use": {
+          "headless": true,
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "ignoreHTTPSErrors": false,
+          "actionTimeout": 10000,
+          "navigationTimeout": 30000,
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure",
+          "video": "off",
+          "locale": "en-US",
+          "timezoneId": "UTC",
+          "acceptDownloads": false,
+          "browserName": "chromium",
+          "launchOptions": {
+            "args": [
+              "--no-sandbox",
+              "--disable-setuid-sandbox",
+              "--disable-dev-shm-usage"
+            ]
+          }
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/app/reports/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "/app/reports/html",
+          "open": "never"
+        }
+      ],
+      [
+        "/app/src/utils/summary-reporter.js",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "accessibility.spec.js",
+      "file": "accessibility.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Basic accessibility checks",
+          "file": "accessibility.spec.js",
+          "line": 6,
+          "column": 6,
+          "specs": [
+            {
+              "title": "document declares a language",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2495,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:58:56.132Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d316df4bad39fab891ed-58c8e40560a0b085e2a4",
+              "file": "accessibility.spec.js",
+              "line": 7,
+              "column": 3
+            },
+            {
+              "title": "page has a top-level heading",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1663,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:58:59.330Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "h1-headings.json",
+                          "contentType": "application/json",
+                          "body": "WwogICJERVJNQUdBIEpUSSIKXQ=="
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d316df4bad39fab891ed-89517cf96596375711e5",
+              "file": "accessibility.spec.js",
+              "line": 20,
+              "column": 3
+            },
+            {
+              "title": "images have alternative text attributes",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1561,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:59:01.025Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "image-alt-check.json",
+                          "contentType": "application/json",
+                          "body": "WwogIHsKICAgICJzcmMiOiAiaHR0cHM6Ly9qdGkucG9saW5lbWEuYWMuaWQvZGVybWFnYS9hc3NldHMvaW1nL2xvZ28tcG9saW5lbWEucG5nIiwKICAgICJhbHQiOiAiTG9nbyBQb2xpbmVtYSIsCiAgICAiaGFzQWx0IjogdHJ1ZSwKICAgICJ2aXNpYmxlIjogdHJ1ZQogIH0sCiAgewogICAgInNyYyI6ICJodHRwczovL2p0aS5wb2xpbmVtYS5hYy5pZC9kZXJtYWdhL2Fzc2V0cy9pbWcvbG9nby1qdGkucG5nIiwKICAgICJhbHQiOiAiTG9nbyBKVEkiLAogICAgImhhc0FsdCI6IHRydWUsCiAgICAidmlzaWJsZSI6IHRydWUKICB9Cl0="
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d316df4bad39fab891ed-6b790d90a06cb4951847",
+              "file": "accessibility.spec.js",
+              "line": 37,
+              "column": 3
+            },
+            {
+              "title": "element IDs are unique",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1483,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:59:02.605Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "duplicate-ids.json",
+                          "contentType": "application/json",
+                          "body": "W10="
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d316df4bad39fab891ed-6d0c902b06a54fdaab3b",
+              "file": "accessibility.spec.js",
+              "line": 69,
+              "column": 3
+            },
+            {
+              "title": "links and buttons have accessible names",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1527,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:59:04.110Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "unnamed-interactive-elements.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJjaGVja2VkIjogMywKICAidW5uYW1lZCI6IFtdCn0="
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "d316df4bad39fab891ed-d61354690687a93f3d60",
+              "file": "accessibility.spec.js",
+              "line": 95,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "forms.spec.js",
+      "file": "forms.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Form detection and basic validation",
+          "file": "forms.spec.js",
+          "line": 20,
+          "column": 6,
+          "specs": [
+            {
+              "title": "forms are detected on the homepage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1504,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:59:05.676Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "forms-inspection.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJ0b3RhbEZvcm1zIjogMSwKICAiaW5zcGVjdGVkQ291bnQiOiAxLAogICJmb3JtcyI6IFsKICAgIHsKICAgICAgImluZGV4IjogMCwKICAgICAgImlkIjogImZvcm1Mb2dpbiIsCiAgICAgICJuYW1lIjogIiIsCiAgICAgICJhY3Rpb24iOiAiaHR0cHM6Ly9qdGkucG9saW5lbWEuYWMuaWQvZGVybWFnYS9sb2dpbiIsCiAgICAgICJtZXRob2QiOiAicG9zdCIsCiAgICAgICJ2aXNpYmxlIjogdHJ1ZSwKICAgICAgImNvbnRyb2xzIjogWwogICAgICAgIHsKICAgICAgICAgICJ0YWciOiAiaW5wdXQiLAogICAgICAgICAgInR5cGUiOiAidGV4dCIsCiAgICAgICAgICAibmFtZSI6ICJ1c2VybmFtZSIsCiAgICAgICAgICAiaWQiOiAidXNlcm5hbWUiLAogICAgICAgICAgInBsYWNlaG9sZGVyIjogIk1hc3Vra2FuIHVzZXJuYW1lIiwKICAgICAgICAgICJyZXF1aXJlZCI6IHRydWUsCiAgICAgICAgICAiZGlzYWJsZWQiOiBmYWxzZSwKICAgICAgICAgICJ2aXNpYmxlIjogdHJ1ZSwKICAgICAgICAgICJsYWJlbCI6ICJVc2VybmFtZSIKICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgICJ0YWciOiAiaW5wdXQiLAogICAgICAgICAgInR5cGUiOiAicGFzc3dvcmQiLAogICAgICAgICAgIm5hbWUiOiAicGFzc3dvcmQiLAogICAgICAgICAgImlkIjogInBhc3N3b3JkIiwKICAgICAgICAgICJwbGFjZWhvbGRlciI6ICJNYXN1a2thbiBwYXNzd29yZCIsCiAgICAgICAgICAicmVxdWlyZWQiOiB0cnVlLAogICAgICAgICAgImRpc2FibGVkIjogZmFsc2UsCiAgICAgICAgICAidmlzaWJsZSI6IHRydWUsCiAgICAgICAgICAibGFiZWwiOiAiUGFzc3dvcmQiCiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICAidGFnIjogImlucHV0IiwKICAgICAgICAgICJ0eXBlIjogImNoZWNrYm94IiwKICAgICAgICAgICJuYW1lIjogInJlbWVtYmVyIiwKICAgICAgICAgICJpZCI6ICJyZW1lbWJlciIsCiAgICAgICAgICAicGxhY2Vob2xkZXIiOiAiIiwKICAgICAgICAgICJyZXF1aXJlZCI6IGZhbHNlLAogICAgICAgICAgImRpc2FibGVkIjogZmFsc2UsCiAgICAgICAgICAidmlzaWJsZSI6IHRydWUsCiAgICAgICAgICAibGFiZWwiOiAiSW5nYXQgc2F5YSIKICAgICAgICB9CiAgICAgIF0sCiAgICAgICJzdWJtaXRDb250cm9scyI6IFsKICAgICAgICB7CiAgICAgICAgICAidGFnIjogImJ1dHRvbiIsCiAgICAgICAgICAidHlwZSI6ICJidXR0b24iLAogICAgICAgICAgIm5hbWUiOiAiVGFtcGlsa2FuIHBhc3N3b3JkIiwKICAgICAgICAgICJ2aXNpYmxlIjogdHJ1ZQogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgInRhZyI6ICJidXR0b24iLAogICAgICAgICAgInR5cGUiOiAic3VibWl0IiwKICAgICAgICAgICJuYW1lIjogIk1hc3VrIiwKICAgICAgICAgICJ2aXNpYmxlIjogdHJ1ZQogICAgICAgIH0KICAgICAgXSwKICAgICAgInJlcXVpcmVkQ291bnQiOiAyLAogICAgICAiaW5wdXRUeXBlcyI6IFsKICAgICAgICAidGV4dCIsCiAgICAgICAgInBhc3N3b3JkIiwKICAgICAgICAiY2hlY2tib3giCiAgICAgIF0sCiAgICAgICJoYXNGaWxlVXBsb2FkIjogZmFsc2UsCiAgICAgICJoYXNQYXNzd29yZCI6IHRydWUKICAgIH0KICBdCn0="
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "74e2b704a1470bdf7603-7f37d0792341f34c267c",
+              "file": "forms.spec.js",
+              "line": 21,
+              "column": 3
+            },
+            {
+              "title": "visible form controls have accessible labels",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1483,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:59:07.205Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "form-labels.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJ2aXNpYmxlRm9ybXMiOiAxLAogICJ2aXNpYmxlQ29udHJvbHMiOiBbCiAgICB7CiAgICAgICJ0YWciOiAiaW5wdXQiLAogICAgICAidHlwZSI6ICJ0ZXh0IiwKICAgICAgIm5hbWUiOiAidXNlcm5hbWUiLAogICAgICAiaWQiOiAidXNlcm5hbWUiLAogICAgICAicGxhY2Vob2xkZXIiOiAiTWFzdWtrYW4gdXNlcm5hbWUiLAogICAgICAicmVxdWlyZWQiOiB0cnVlLAogICAgICAiZGlzYWJsZWQiOiBmYWxzZSwKICAgICAgInZpc2libGUiOiB0cnVlLAogICAgICAibGFiZWwiOiAiVXNlcm5hbWUiCiAgICB9LAogICAgewogICAgICAidGFnIjogImlucHV0IiwKICAgICAgInR5cGUiOiAicGFzc3dvcmQiLAogICAgICAibmFtZSI6ICJwYXNzd29yZCIsCiAgICAgICJpZCI6ICJwYXNzd29yZCIsCiAgICAgICJwbGFjZWhvbGRlciI6ICJNYXN1a2thbiBwYXNzd29yZCIsCiAgICAgICJyZXF1aXJlZCI6IHRydWUsCiAgICAgICJkaXNhYmxlZCI6IGZhbHNlLAogICAgICAidmlzaWJsZSI6IHRydWUsCiAgICAgICJsYWJlbCI6ICJQYXNzd29yZCIKICAgIH0sCiAgICB7CiAgICAgICJ0YWciOiAiaW5wdXQiLAogICAgICAidHlwZSI6ICJjaGVja2JveCIsCiAgICAgICJuYW1lIjogInJlbWVtYmVyIiwKICAgICAgImlkIjogInJlbWVtYmVyIiwKICAgICAgInBsYWNlaG9sZGVyIjogIiIsCiAgICAgICJyZXF1aXJlZCI6IGZhbHNlLAogICAgICAiZGlzYWJsZWQiOiBmYWxzZSwKICAgICAgInZpc2libGUiOiB0cnVlLAogICAgICAibGFiZWwiOiAiSW5nYXQgc2F5YSIKICAgIH0KICBdCn0="
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "74e2b704a1470bdf7603-5a5c4ef24d3c1ad1aa64",
+              "file": "forms.spec.js",
+              "line": 45,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "images.spec.js",
+      "file": "images.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "images load successfully",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2135,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-06T07:59:08.718Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "images-found.json",
+                      "contentType": "application/json",
+                      "body": "WwogIHsKICAgICJpbmRleCI6IDAsCiAgICAic3JjIjogImh0dHBzOi8vanRpLnBvbGluZW1hLmFjLmlkL2Rlcm1hZ2EvYXNzZXRzL2ltZy9sb2dvLXBvbGluZW1hLnBuZyIsCiAgICAicmF3U3JjIjogImh0dHBzOi8vanRpLnBvbGluZW1hLmFjLmlkL2Rlcm1hZ2EvYXNzZXRzL2ltZy9sb2dvLXBvbGluZW1hLnBuZyIsCiAgICAiZGF0YVNyYyI6ICIiLAogICAgImFsdCI6ICJMb2dvIFBvbGluZW1hIiwKICAgICJoYXNBbHQiOiB0cnVlLAogICAgImxvYWRpbmciOiAiIiwKICAgICJjb21wbGV0ZSI6IHRydWUsCiAgICAibmF0dXJhbFdpZHRoIjogMTUwLAogICAgIm5hdHVyYWxIZWlnaHQiOiAxNTAsCiAgICAidmlzaWJsZSI6IHRydWUKICB9LAogIHsKICAgICJpbmRleCI6IDEsCiAgICAic3JjIjogImh0dHBzOi8vanRpLnBvbGluZW1hLmFjLmlkL2Rlcm1hZ2EvYXNzZXRzL2ltZy9sb2dvLWp0aS5wbmciLAogICAgInJhd1NyYyI6ICJodHRwczovL2p0aS5wb2xpbmVtYS5hYy5pZC9kZXJtYWdhL2Fzc2V0cy9pbWcvbG9nby1qdGkucG5nIiwKICAgICJkYXRhU3JjIjogIiIsCiAgICAiYWx0IjogIkxvZ28gSlRJIiwKICAgICJoYXNBbHQiOiB0cnVlLAogICAgImxvYWRpbmciOiAiIiwKICAgICJjb21wbGV0ZSI6IHRydWUsCiAgICAibmF0dXJhbFdpZHRoIjogMTU3LAogICAgIm5hdHVyYWxIZWlnaHQiOiAxNjQsCiAgICAidmlzaWJsZSI6IHRydWUKICB9Cl0="
+                    },
+                    {
+                      "name": "image-check-results.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJ0b3RhbEltYWdlcyI6IDIsCiAgImluc3BlY3RlZENvdW50IjogMiwKICAic2tpcHBlZENvdW50IjogMCwKICAiYnJva2VuIjogW10sCiAgInVudmVyaWZpZWQiOiBbXSwKICAicmVzdWx0cyI6IFsKICAgIHsKICAgICAgImluZGV4IjogMCwKICAgICAgInNyYyI6ICJodHRwczovL2p0aS5wb2xpbmVtYS5hYy5pZC9kZXJtYWdhL2Fzc2V0cy9pbWcvbG9nby1wb2xpbmVtYS5wbmciLAogICAgICAiYWx0IjogIkxvZ28gUG9saW5lbWEiLAogICAgICAidmlzaWJsZSI6IHRydWUsCiAgICAgICJuYXR1cmFsV2lkdGgiOiAxNTAsCiAgICAgICJuYXR1cmFsSGVpZ2h0IjogMTUwLAogICAgICAiY29tcGxldGUiOiB0cnVlLAogICAgICAic3RhdHVzIjogIm9rIiwKICAgICAgInJlYXNvbiI6IG51bGwKICAgIH0sCiAgICB7CiAgICAgICJpbmRleCI6IDEsCiAgICAgICJzcmMiOiAiaHR0cHM6Ly9qdGkucG9saW5lbWEuYWMuaWQvZGVybWFnYS9hc3NldHMvaW1nL2xvZ28tanRpLnBuZyIsCiAgICAgICJhbHQiOiAiTG9nbyBKVEkiLAogICAgICAidmlzaWJsZSI6IHRydWUsCiAgICAgICJuYXR1cmFsV2lkdGgiOiAxNTcsCiAgICAgICJuYXR1cmFsSGVpZ2h0IjogMTY0LAogICAgICAiY29tcGxldGUiOiB0cnVlLAogICAgICAic3RhdHVzIjogIm9rIiwKICAgICAgInJlYXNvbiI6IG51bGwKICAgIH0KICBdCn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "9ab35f9587b47e64abc5-8cfe3dc4bc1fcaf4d96b",
+          "file": "images.spec.js",
+          "line": 14,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "links.spec.js",
+      "file": "links.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "internal links resolve without HTTP errors",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2470,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-06T07:59:10.884Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "collected-links.json",
+                      "contentType": "application/json",
+                      "body": "WwogIHsKICAgICJ1cmwiOiAiaHR0cHM6Ly9qdGkucG9saW5lbWEuYWMuaWQvZGVybWFnYS9zc28vZ29vZ2xlIiwKICAgICJ0ZXh0IjogIkxvZ2luIGRlbmdhbiBHb29nbGUgUG9saW5lbWEiLAogICAgInNvdXJjZSI6ICJodHRwczovL2p0aS5wb2xpbmVtYS5hYy5pZC9kZXJtYWdhIiwKICAgICJkZXB0aCI6IDEKICB9Cl0="
+                    },
+                    {
+                      "name": "link-check-results.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJjaGVja2VkIjogMSwKICAibWF4UGFnZXMiOiAxMCwKICAibWF4RGVwdGgiOiAxLAogICJ0cnVuY2F0ZWQiOiBmYWxzZSwKICAidW5jaGVja2VkQ291bnQiOiAwLAogICJyZXN1bHRzIjogWwogICAgewogICAgICAidXJsIjogImh0dHBzOi8vanRpLnBvbGluZW1hLmFjLmlkL2Rlcm1hZ2Evc3NvL2dvb2dsZSIsCiAgICAgICJ0ZXh0IjogIkxvZ2luIGRlbmdhbiBHb29nbGUgUG9saW5lbWEiLAogICAgICAic291cmNlIjogImh0dHBzOi8vanRpLnBvbGluZW1hLmFjLmlkL2Rlcm1hZ2EiLAogICAgICAiZGVwdGgiOiAxLAogICAgICAic3RhdHVzIjogMjAwLAogICAgICAib2siOiB0cnVlLAogICAgICAiZmluYWxVcmwiOiAiaHR0cHM6Ly9hY2NvdW50cy5nb29nbGUuY29tL3YzL3NpZ25pbi9pZGVudGlmaWVyP29wcGFyYW1zPSUyNTNGaGQlMjUzRHBvbGluZW1hLmFjLmlkJmRzaD1TLTQ2NjMwNjA3JTNBMTc5Mzk1MTk1MjUxNzQyNyZjbGllbnRfaWQ9Mjk0MDU1MzEyNTA1LWlyMHNsZGJxZWk4dTQydGpjYnN0NGx2NXVycmtuYmNuLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tJmhkPXBvbGluZW1hLmFjLmlkJm5vbmNlPTAyNTE0YzM5NTIwNTVkYzY0MWNlZWQ1Yzg1YTBmN2U4Jm8ydj0yJnByb21wdD1zZWxlY3RfYWNjb3VudCZyZWRpcmVjdF91cmk9aHR0cCUzQSUyRiUyRmp0aS5wb2xpbmVtYS5hYy5pZCUyRmp0aS1zc28mcmVzcG9uc2VfdHlwZT1jb2RlJnNjb3BlPW9wZW5pZCtlbWFpbCtwcm9maWxlJnNlcnZpY2U9bHNvJnN0YXRlPWM4NWQ5NzFjMDA3NjY1NDQ3MWVjZjk5ZWFhOGJjZGZjJmZsb3dOYW1lPUdlbmVyYWxPQXV0aExpdGUmY29udGludWU9aHR0cHMlM0ElMkYlMkZhY2NvdW50cy5nb29nbGUuY29tJTJGc2lnbmluJTJGb2F1dGglMkZsZWdhY3klMkZjb25zZW50JTNGYXV0aHVzZXIlM0R1bmtub3duJTI2cGFydCUzREFKaThoQU4tenpNQnNOaGdwQVMzVjlSeDZTelBoc3kxSk1wTnBOZlhmRlJYeV9WaGp4Zm9yZTJncnpZejV5T0cwbTRFaEVWM1JlWFdqY0hQUmF3Nm1oWmxpQnRJdEtqbkhza0VjbXhhdTBQQXRPdUJqYVNrbnBXeVZoeW5sV0pqR3ljdXhCTTh1UklXalJqQ29haVV2VkxjREM5X19fUFIyOU56Q0hTem9LWVNKeTFsT3NYaGJuVjRncXhHbjIydFhwOFBPbjZoTnNJWnlTN3lFYjI3MVRtTGhXWEdlRG9HWFRfRVI4MjVlSHhHZ2hYYjhoei0zemZyMDNndk9nWnFfaGZjQjViUlRnMmF6X05kOUIxT1NreENkUkJxWUhiUWFNU040X2piMTNGLUg1bUNjdzg5YkRQdE9tLXZjVUVTeEVJcUxoV1V5UzNKZVpuaVU4eGJJeHkxMlJoekV5R2ZlTVBlX3had0NncmdObXdZeENTM1NMVS1va3VVOTgtY3loSlU5YW83V2ZaUU96d0RKQV94SWZDSjFDOEhoNUtVNXpwMUo1TVZCdk93czBENmlGMWtwYTBYbXhFNTFscXc1YkJtOHJMSUZhc2pLalg5VVRrTWtKVF9tTE1ZTHQ4VkJRJTI2Zmxvd05hbWUlM0RHZW5lcmFsT0F1dGhGbG93JTI2YXMlM0RTLTQ2NjMwNjA3JTI1M0ExNzkzOTUxOTUyNTE3NDI3JTI2Y2xpZW50X2lkJTNEMjk0MDU1MzEyNTA1LWlyMHNsZGJxZWk4dTQydGpjYnN0NGx2NXVycmtuYmNuLmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tJTIzJmFwcF9kb21haW49aHR0cCUzQSUyRiUyRmp0aS5wb2xpbmVtYS5hYy5pZCZyYXJ0PUFOZ294Y2VCRF9FdzdvQnhhSFYyS3lUMDFTdW9MLU56WEMzcUt4TVhjU2swc2hCQmZJdXFxZnhpaUVUMjlPRVRhbTQ3aWVYR1FhWXBGRGpwRF90SlVMMDBaZWhTUUxoX1ZDdy11NFMyRGE0ajNGbXNhVkJkZUxRIiwKICAgICAgInJlZGlyZWN0ZWQiOiB0cnVlLAogICAgICAiY29udGVudFR5cGUiOiAidGV4dC9odG1sOyBjaGFyc2V0PXV0Zi04IiwKICAgICAgInNvZnQ0MDQiOiBmYWxzZSwKICAgICAgImVycm9yIjogbnVsbAogICAgfQogIF0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "8d6e4cd3dc9e4d9d0fa7-21af4e7559a07d3ac0be",
+          "file": "links.spec.js",
+          "line": 17,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "navigation.spec.js",
+      "file": "navigation.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Homepage, loading, and basic performance",
+          "file": "navigation.spec.js",
+          "line": 22,
+          "column": 6,
+          "specs": [
+            {
+              "title": "homepage is reachable and returns a successful HTTP status",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "http-status",
+                      "description": "200"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1532,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:59:13.385Z",
+                      "annotations": [
+                        {
+                          "type": "http-status",
+                          "description": "200"
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "homepage-metadata.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJzdGF0dXMiOiAyMDAsCiAgImZpbmFsVXJsIjogImh0dHBzOi8vanRpLnBvbGluZW1hLmFjLmlkL2Rlcm1hZ2EvIiwKICAiZHVyYXRpb25NcyI6IDk3MiwKICAidGl0bGUiOiAiTG9naW4gfCBERVJNQUdBIEpUSSIsCiAgInVybCI6ICJodHRwczovL2p0aS5wb2xpbmVtYS5hYy5pZC9kZXJtYWdhLyIsCiAgInJlcXVlc3RlZFVybCI6ICJodHRwczovL2p0aS5wb2xpbmVtYS5hYy5pZC9kZXJtYWdhLyIsCiAgImh0dHBTdGF0dXMiOiAyMDAsCiAgInJlYWR5U3RhdGUiOiAiY29tcGxldGUiLAogICJsYW5nIjogImlkIiwKICAiY2hhcnNldCI6ICJVVEYtOCIsCiAgInZpZXdwb3J0IjogewogICAgImlubmVyV2lkdGgiOiAxNDQwLAogICAgImlubmVySGVpZ2h0IjogOTAwLAogICAgImRldmljZVBpeGVsUmF0aW8iOiAxCiAgfSwKICAiZG9jdW1lbnRXaWR0aCI6IDE0NDAsCiAgImRvY3VtZW50SGVpZ2h0IjogOTAwLAogICJib2R5VGV4dExlbmd0aCI6IDI2Nwp9"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ce7c070a851ea64285fd-50325ae0384a48c44e4a",
+              "file": "navigation.spec.js",
+              "line": 23,
+              "column": 3
+            },
+            {
+              "title": "homepage has a non-empty page title",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "page-title",
+                      "description": "Login | DERMAGA JTI"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1511,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:59:14.935Z",
+                      "annotations": [
+                        {
+                          "type": "page-title",
+                          "description": "Login | DERMAGA JTI"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ce7c070a851ea64285fd-1115538fcbf7d3f50427",
+              "file": "navigation.spec.js",
+              "line": 47,
+              "column": 3
+            },
+            {
+              "title": "page finishes loading and renders a body",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1550,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:59:16.463Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "load-state.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJyZWFkeVN0YXRlIjogImNvbXBsZXRlIiwKICAiYm9keVdpZHRoIjogMTQ0MCwKICAiYm9keUhlaWdodCI6IDkwMCwKICAiYm9keVRleHRMZW5ndGgiOiAyNjcsCiAgImh0dHBTdGF0dXMiOiAyMDAKfQ=="
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ce7c070a851ea64285fd-bf81194b29d4eef62896",
+              "file": "navigation.spec.js",
+              "line": 56,
+              "column": 3
+            },
+            {
+              "title": "basic navigation performance stays within configured budgets",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1557,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:59:18.028Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "navigation-timing.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJ3YWxsQ2xvY2tMb2FkTXMiOiAxMDA3LAogICJ0eXBlIjogIm5hdmlnYXRlIiwKICAicmVkaXJlY3RDb3VudCI6IDEsCiAgInJlc3BvbnNlU3RhcnRNcyI6IDE1MywKICAiZG9tQ29udGVudExvYWRlZE1zIjogNDgwLAogICJsb2FkTXMiOiA0ODEsCiAgImR1cmF0aW9uTXMiOiA0ODEsCiAgInRyYW5zZmVyU2l6ZSI6IDIyNDksCiAgImVuY29kZWRCb2R5U2l6ZSI6IDE5NDksCiAgImRlY29kZWRCb2R5U2l6ZSI6IDc1NjkKfQ=="
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ce7c070a851ea64285fd-d56b0d91062088cbab66",
+              "file": "navigation.spec.js",
+              "line": 96,
+              "column": 3
+            },
+            {
+              "title": "primary navigation exists and contains usable links",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "description": "No visible navigation links were found in <nav>, [role=\"navigation\"], or <header>.",
+                      "location": {
+                        "file": "/app/src/tests/navigation.spec.js",
+                        "line": 132,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 1473,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:59:19.602Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "description": "No visible navigation links were found in <nav>, [role=\"navigation\"], or <header>.",
+                          "location": {
+                            "file": "/app/src/tests/navigation.spec.js",
+                            "line": 132,
+                            "column": 12
+                          }
+                        }
+                      ],
+                      "attachments": [
+                        {
+                          "name": "navigation-links.json",
+                          "contentType": "application/json",
+                          "body": "W10="
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "ce7c070a851ea64285fd-4328905cc7946ecb7e08",
+              "file": "navigation.spec.js",
+              "line": 121,
+              "column": 3
+            },
+            {
+              "title": "no JavaScript console errors on the homepage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [
+                    {
+                      "type": "console-errors",
+                      "description": "0"
+                    }
+                  ],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2553,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:59:21.092Z",
+                      "annotations": [
+                        {
+                          "type": "console-errors",
+                          "description": "0"
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ce7c070a851ea64285fd-12181b9f81d7ac30b9b9",
+              "file": "navigation.spec.js",
+              "line": 151,
+              "column": 3
+            },
+            {
+              "title": "no uncaught page errors on the homepage",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2474,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:59:23.675Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "ce7c070a851ea64285fd-0bff9ee5777a161990c9",
+              "file": "navigation.spec.js",
+              "line": 172,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "responsive.spec.js",
+      "file": "responsive.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Responsive layout - desktop (1440x900)",
+          "file": "responsive.spec.js",
+          "line": 11,
+          "column": 8,
+          "specs": [
+            {
+              "title": "renders without horizontal overflow at 1440x900",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2738,
+                      "error": {
+                        "message": "Error: Horizontal overflow is 360px (tolerance 2px). Possible offenders: []\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m2\u001b[39m\nReceived:    \u001b[31m360\u001b[39m",
+                        "stack": "Error: Horizontal overflow is 360px (tolerance 2px). Possible offenders: []\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m2\u001b[39m\nReceived:    \u001b[31m360\u001b[39m\n    at /app/src/tests/responsive.spec.js:111:9",
+                        "location": {
+                          "file": "/app/src/tests/responsive.spec.js",
+                          "column": 9,
+                          "line": 111
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 109 |\u001b[39m         \u001b[32m`Horizontal overflow is ${layout.horizontalOverflow}px (tolerance ${config.overflowTolerancePx}px). `\u001b[39m \u001b[33m+\u001b[39m\n \u001b[90m 110 |\u001b[39m           \u001b[32m`Possible offenders: ${JSON.stringify(layout.offenders, null, 2)}`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 111 |\u001b[39m       )\u001b[33m.\u001b[39mtoBeLessThanOrEqual(config\u001b[33m.\u001b[39moverflowTolerancePx)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 112 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 113 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 114 |\u001b[39m }\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/app/src/tests/responsive.spec.js",
+                            "column": 9,
+                            "line": 111
+                          },
+                          "message": "Error: Horizontal overflow is 360px (tolerance 2px). Possible offenders: []\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m2\u001b[39m\nReceived:    \u001b[31m360\u001b[39m\n\n  109 |         `Horizontal overflow is ${layout.horizontalOverflow}px (tolerance ${config.overflowTolerancePx}px). ` +\n  110 |           `Possible offenders: ${JSON.stringify(layout.offenders, null, 2)}`,\n> 111 |       ).toBeLessThanOrEqual(config.overflowTolerancePx);\n      |         ^\n  112 |     });\n  113 |   });\n  114 | }\n    at /app/src/tests/responsive.spec.js:111:9"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:59:26.181Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "layout-metrics.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJ2aWV3cG9ydCI6IHsKICAgICJuYW1lIjogImRlc2t0b3AiLAogICAgIndpZHRoIjogMTQ0MCwKICAgICJoZWlnaHQiOiA5MDAsCiAgICAiaXNNb2JpbGUiOiBmYWxzZSwKICAgICJoYXNUb3VjaCI6IGZhbHNlCiAgfSwKICAiY2xpZW50V2lkdGgiOiAxNDQwLAogICJzY3JvbGxXaWR0aCI6IDE4MDAsCiAgImhvcml6b250YWxPdmVyZmxvdyI6IDM2MCwKICAib2ZmZW5kZXJzIjogW10sCiAgInZpZXdwb3J0TWV0YUNvbnRlbnQiOiAid2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTEiLAogICJib2R5V2lkdGgiOiAxNDQwLAogICJib2R5SGVpZ2h0IjogOTAwLAogICJkZXZpY2VQaXhlbFJhdGlvIjogMQp9"
+                        },
+                        {
+                          "name": "responsive-desktop",
+                          "contentType": "image/png",
+                          "path": "/app/reports/test-results/responsive-Responsive-layo-44a83-zontal-overflow-at-1440x900-chromium/attachments/responsive-desktop-27dc9dc4f0563555ebea3060ab878eb0f54171af.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/reports/test-results/responsive-Responsive-layo-44a83-zontal-overflow-at-1440x900-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "failure-screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/reports/test-results/responsive-Responsive-layo-44a83-zontal-overflow-at-1440x900-chromium/attachments/failure-screenshot-6f580c20157c934b87312661f47b394a89fc4277.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/app/reports/test-results/responsive-Responsive-layo-44a83-zontal-overflow-at-1440x900-chromium/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/app/reports/test-results/responsive-Responsive-layo-44a83-zontal-overflow-at-1440x900-chromium/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/app/src/tests/responsive.spec.js",
+                        "column": 9,
+                        "line": 111
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "68833bfb7a01a66a4f98-34139df07e389de2477e",
+              "file": "responsive.spec.js",
+              "line": 19,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "Responsive layout - tablet (810x1080)",
+          "file": "responsive.spec.js",
+          "line": 11,
+          "column": 8,
+          "specs": [
+            {
+              "title": "renders without horizontal overflow at 810x1080",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2785,
+                      "error": {
+                        "message": "Error: Horizontal overflow is 203px (tolerance 2px). Possible offenders: []\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m2\u001b[39m\nReceived:    \u001b[31m203\u001b[39m",
+                        "stack": "Error: Horizontal overflow is 203px (tolerance 2px). Possible offenders: []\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m2\u001b[39m\nReceived:    \u001b[31m203\u001b[39m\n    at /app/src/tests/responsive.spec.js:111:9",
+                        "location": {
+                          "file": "/app/src/tests/responsive.spec.js",
+                          "column": 9,
+                          "line": 111
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 109 |\u001b[39m         \u001b[32m`Horizontal overflow is ${layout.horizontalOverflow}px (tolerance ${config.overflowTolerancePx}px). `\u001b[39m \u001b[33m+\u001b[39m\n \u001b[90m 110 |\u001b[39m           \u001b[32m`Possible offenders: ${JSON.stringify(layout.offenders, null, 2)}`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 111 |\u001b[39m       )\u001b[33m.\u001b[39mtoBeLessThanOrEqual(config\u001b[33m.\u001b[39moverflowTolerancePx)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 112 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 113 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 114 |\u001b[39m }\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/app/src/tests/responsive.spec.js",
+                            "column": 9,
+                            "line": 111
+                          },
+                          "message": "Error: Horizontal overflow is 203px (tolerance 2px). Possible offenders: []\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m2\u001b[39m\nReceived:    \u001b[31m203\u001b[39m\n\n  109 |         `Horizontal overflow is ${layout.horizontalOverflow}px (tolerance ${config.overflowTolerancePx}px). ` +\n  110 |           `Possible offenders: ${JSON.stringify(layout.offenders, null, 2)}`,\n> 111 |       ).toBeLessThanOrEqual(config.overflowTolerancePx);\n      |         ^\n  112 |     });\n  113 |   });\n  114 | }\n    at /app/src/tests/responsive.spec.js:111:9"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:59:29.914Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "layout-metrics.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJ2aWV3cG9ydCI6IHsKICAgICJuYW1lIjogInRhYmxldCIsCiAgICAid2lkdGgiOiA4MTAsCiAgICAiaGVpZ2h0IjogMTA4MCwKICAgICJpc01vYmlsZSI6IGZhbHNlLAogICAgImhhc1RvdWNoIjogdHJ1ZQogIH0sCiAgImNsaWVudFdpZHRoIjogODEwLAogICJzY3JvbGxXaWR0aCI6IDEwMTMsCiAgImhvcml6b250YWxPdmVyZmxvdyI6IDIwMywKICAib2ZmZW5kZXJzIjogW10sCiAgInZpZXdwb3J0TWV0YUNvbnRlbnQiOiAid2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTEiLAogICJib2R5V2lkdGgiOiA4MTAsCiAgImJvZHlIZWlnaHQiOiAxMDgwLAogICJkZXZpY2VQaXhlbFJhdGlvIjogMQp9"
+                        },
+                        {
+                          "name": "responsive-tablet",
+                          "contentType": "image/png",
+                          "path": "/app/reports/test-results/responsive-Responsive-layo-5db9e-zontal-overflow-at-810x1080-chromium/attachments/responsive-tablet-53128b968e65a84f10d75f112290a1dff0915369.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/reports/test-results/responsive-Responsive-layo-5db9e-zontal-overflow-at-810x1080-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "failure-screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/reports/test-results/responsive-Responsive-layo-5db9e-zontal-overflow-at-810x1080-chromium/attachments/failure-screenshot-94cff1e8b0303fa9afa99027019e60da8099f79e.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/app/reports/test-results/responsive-Responsive-layo-5db9e-zontal-overflow-at-810x1080-chromium/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/app/reports/test-results/responsive-Responsive-layo-5db9e-zontal-overflow-at-810x1080-chromium/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/app/src/tests/responsive.spec.js",
+                        "column": 9,
+                        "line": 111
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "68833bfb7a01a66a4f98-4102db571a60f72a1a7c",
+              "file": "responsive.spec.js",
+              "line": 19,
+              "column": 5
+            }
+          ]
+        },
+        {
+          "title": "Responsive layout - mobile (390x844)",
+          "file": "responsive.spec.js",
+          "line": 11,
+          "column": 8,
+          "specs": [
+            {
+              "title": "renders without horizontal overflow at 390x844",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 120000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1607,
+                      "error": {
+                        "message": "Error: Horizontal overflow is 98px (tolerance 2px). Possible offenders: []\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m2\u001b[39m\nReceived:    \u001b[31m98\u001b[39m",
+                        "stack": "Error: Horizontal overflow is 98px (tolerance 2px). Possible offenders: []\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m2\u001b[39m\nReceived:    \u001b[31m98\u001b[39m\n    at /app/src/tests/responsive.spec.js:111:9",
+                        "location": {
+                          "file": "/app/src/tests/responsive.spec.js",
+                          "column": 9,
+                          "line": 111
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 109 |\u001b[39m         \u001b[32m`Horizontal overflow is ${layout.horizontalOverflow}px (tolerance ${config.overflowTolerancePx}px). `\u001b[39m \u001b[33m+\u001b[39m\n \u001b[90m 110 |\u001b[39m           \u001b[32m`Possible offenders: ${JSON.stringify(layout.offenders, null, 2)}`\u001b[39m\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 111 |\u001b[39m       )\u001b[33m.\u001b[39mtoBeLessThanOrEqual(config\u001b[33m.\u001b[39moverflowTolerancePx)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 112 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 113 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 114 |\u001b[39m }\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/app/src/tests/responsive.spec.js",
+                            "column": 9,
+                            "line": 111
+                          },
+                          "message": "Error: Horizontal overflow is 98px (tolerance 2px). Possible offenders: []\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m2\u001b[39m\nReceived:    \u001b[31m98\u001b[39m\n\n  109 |         `Horizontal overflow is ${layout.horizontalOverflow}px (tolerance ${config.overflowTolerancePx}px). ` +\n  110 |           `Possible offenders: ${JSON.stringify(layout.offenders, null, 2)}`,\n> 111 |       ).toBeLessThanOrEqual(config.overflowTolerancePx);\n      |         ^\n  112 |     });\n  113 |   });\n  114 | }\n    at /app/src/tests/responsive.spec.js:111:9"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-06T07:59:33.672Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "layout-metrics.json",
+                          "contentType": "application/json",
+                          "body": "ewogICJ2aWV3cG9ydCI6IHsKICAgICJuYW1lIjogIm1vYmlsZSIsCiAgICAid2lkdGgiOiAzOTAsCiAgICAiaGVpZ2h0IjogODQ0LAogICAgImlzTW9iaWxlIjogdHJ1ZSwKICAgICJoYXNUb3VjaCI6IHRydWUKICB9LAogICJjbGllbnRXaWR0aCI6IDM5MCwKICAic2Nyb2xsV2lkdGgiOiA0ODgsCiAgImhvcml6b250YWxPdmVyZmxvdyI6IDk4LAogICJvZmZlbmRlcnMiOiBbXSwKICAidmlld3BvcnRNZXRhQ29udGVudCI6ICJ3aWR0aD1kZXZpY2Utd2lkdGgsIGluaXRpYWwtc2NhbGU9MSIsCiAgImJvZHlXaWR0aCI6IDM5MCwKICAiYm9keUhlaWdodCI6IDg0NCwKICAiZGV2aWNlUGl4ZWxSYXRpbyI6IDEKfQ=="
+                        },
+                        {
+                          "name": "responsive-mobile",
+                          "contentType": "image/png",
+                          "path": "/app/reports/test-results/responsive-Responsive-layo-53366-izontal-overflow-at-390x844-chromium/attachments/responsive-mobile-edb6b0a9aaff2f9d6b67b3b5886d4fa68a85b486.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/reports/test-results/responsive-Responsive-layo-53366-izontal-overflow-at-390x844-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "failure-screenshot",
+                          "contentType": "image/png",
+                          "path": "/app/reports/test-results/responsive-Responsive-layo-53366-izontal-overflow-at-390x844-chromium/attachments/failure-screenshot-e125a6e3ff4fe42e6c7e3d470f81b2214949fcf0.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/app/reports/test-results/responsive-Responsive-layo-53366-izontal-overflow-at-390x844-chromium/error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/app/reports/test-results/responsive-Responsive-layo-53366-izontal-overflow-at-390x844-chromium/trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/app/src/tests/responsive.spec.js",
+                        "column": 9,
+                        "line": 111
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "68833bfb7a01a66a4f98-544b0fa6bcc8683cf30a",
+              "file": "responsive.spec.js",
+              "line": 19,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-06T07:58:55.224Z",
+    "duration": 40365.158,
+    "expected": 15,
+    "skipped": 1,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

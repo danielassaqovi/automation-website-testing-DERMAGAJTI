@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Universal Website Testing Report - https://jti.polinema.ac.id/dermaga</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f4f6fb;
+    --panel: #ffffff;
+    --ink: #172033;
+    --muted: #5d6b82;
+    --line: #dfe5ef;
+    --pass: #0f7b4f;
+    --pass-bg: #e8f7ef;
+    --fail: #b42318;
+    --fail-bg: #fdecea;
+    --skip: #8a5a00;
+    --skip-bg: #fff5db;
+    --accent: #1d4ed8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 32px 20px 64px; }
+  header { margin-bottom: 24px; }
+  .kicker { margin: 0; color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+  h1 { margin: 4px 0 8px; font-size: clamp(26px, 4vw, 40px); }
+  .target { margin: 0; font-size: 16px; overflow-wrap: anywhere; }
+  .target a { color: var(--accent); }
+  .meta { color: var(--muted); margin: 6px 0 0; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 24px 0; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; display: flex; justify-content: space-between; align-items: baseline; }
+  .card strong { font-size: 28px; }
+  .card.passed strong { color: var(--pass); }
+  .card.failed strong { color: var(--fail); }
+  .card.skipped strong { color: var(--skip); }
+  .card-label { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: .06em; }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 20px; margin: 18px 0; }
+  .panel h2 { margin: 0 0 12px; font-size: 18px; }
+  .kv { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 24px; }
+  .kv div { overflow-wrap: anywhere; }
+  .kv dt { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .05em; }
+  .kv dd { margin: 0; font-size: 14px; }
+  .toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 22px 0 12px; }
+  .toolbar button {
+    border: 1px solid var(--line); background: var(--panel); color: var(--ink);
+    padding: 8px 14px; border-radius: 999px; cursor: pointer; font-size: 13px;
+  }
+  .toolbar button.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+  .toolbar .rate { margin-left: auto; color: var(--muted); font-size: 13px; }
+  .group { margin: 22px 0 30px; }
+  .group h2 { font-size: 15px; color: var(--muted); border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+  .test { background: var(--panel); border: 1px solid var(--line); border-left-width: 5px; border-radius: 12px; padding: 14px 18px; margin: 10px 0; }
+  .test.pass { border-left-color: var(--pass); }
+  .test.fail { border-left-color: var(--fail); }
+  .test.skip { border-left-color: var(--skip); }
+  .test-head { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .badge { font-size: 11px; font-weight: 800; letter-spacing: .08em; padding: 4px 9px; border-radius: 999px; }
+  .badge.pass { color: var(--pass); background: var(--pass-bg); }
+  .badge.fail { color: var(--fail); background: var(--fail-bg); }
+  .badge.skip { color: var(--skip); background: var(--skip-bg); }
+  .test-title { font-weight: 650; }
+  .duration { color: var(--muted); font-size: 12px; margin-left: auto; }
+  .path { color: var(--muted); font-size: 12px; margin: 6px 0 0; overflow-wrap: anywhere; }
+  .notes { margin: 10px 0 0; border-radius: 10px; padding: 10px 12px; background: #f8f9fc; }
+  .notes.fail { background: var(--fail-bg); }
+  .notes.skip { background: var(--skip-bg); }
+  pre { margin: 8px 0 0; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; max-height: 380px; overflow: auto; }
+  .attachments { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+  .attachment { font-size: 12px; }
+  .attachment img { display: block; max-width: 240px; max-height: 150px; border: 1px solid var(--line); border-radius: 8px; object-fit: cover; object-position: top; background: #fff; }
+  .attachment a { color: var(--accent); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  .chip { background: #eef2ff; color: #313d70; border-radius: 999px; padding: 2px 8px; font-size: 11px; }
+  footer { color: var(--muted); font-size: 12px; margin-top: 36px; border-top: 1px solid var(--line); padding-top: 16px; }
+  @media (max-width: 640px) { .duration { margin-left: 0; } .toolbar .rate { margin-left: 0; width: 100%; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="kicker">Universal Website Testing Tool</p>
+    <h1>Test Report</h1>
+    <p class="target">Target: <a href="https://jti.polinema.ac.id/dermaga" rel="noreferrer">https://jti.polinema.ac.id/dermaga</a></p>
+    <p class="meta">Generated 2026-11-06T07:59:35.698Z · Browser: chromium · Duration: 40.24 s · Run status: failed</p>
+  </header>
+
+  <section class="cards">
+          <div class="card total">
+            <span class="card-label">Total</span>
+            <strong>19</strong>
+          </div>
+          <div class="card passed">
+            <span class="card-label">Passed</span>
+            <strong>15</strong>
+          </div>
+          <div class="card failed">
+            <span class="card-label">Failed</span>
+            <strong>3</strong>
+          </div>
+          <div class="card skipped">
+            <span class="card-label">Skipped</span>
+            <strong>1</strong>
+          </div></section>
+
+  
+      <section class="panel">
+        <h2>Pre-flight inspection</h2>
+        <dl class="kv"><div><dt>Reachable</dt><dd>yes</dd></div><div><dt>HTTP status</dt><dd>200</dd></div><div><dt>Response time</dt><dd>1345 ms</dd></div><div><dt>Final URL</dt><dd>https://jti.polinema.ac.id/dermaga/</dd></div><div><dt>Page title</dt><dd>Login | DERMAGA JTI</dd></div><div><dt>Content type</dt><dd>text/html; charset=UTF-8</dd></div><div><dt>Server</dt><dd>LiteSpeed</dd></div><div><dt>Redirected</dt><dd>yes</dd></div><div><dt>Checked at</dt><dd>2026-11-06T07:58:54.089Z</dd></div></dl>
+      </section>
+
+  <section class="toolbar" aria-label="Filter results">
+    <button type="button" data-filter="all" class="active">All (19)</button>
+    <button type="button" data-filter="passed">PASS (15)</button>
+    <button type="button" data-filter="failed">FAIL (3)</button>
+    <button type="button" data-filter="skipped">SKIP (1)</button>
+    <span class="rate">Pass rate (executed tests): <strong>83.3%</strong></span>
+  </section>
+
+  
+        <section class="group" data-group>
+          <h2>src/tests/accessibility.spec.js</h2>
+          
+      <article class="test pass" data-test data-status="passed">
+        <div class="test-head">
+          <span class="badge pass">PASS</span>
+          <span class="test-title">document declares a language</span>
+          <span class="duration">2.50 s</span>
+        </div>
+        <p class="path">src/tests/accessibility.spec.js:7 · chromium › accessibility.spec.js › Basic accessibility checks › document declares a language</p>
+        
+        
+        
+      </article>
+      <article class="test pass" data-test data-status="passed">
+        <div class="test-head">
+          <span class="badge pass">PASS</span>
+          <span class="test-title">page has a top-level heading</span>
+          <span class="duration">1.66 s</span>
+        </div>
+        <p class="path">src/tests/accessibility.spec.js:20 · chromium › accessibility.spec.js › Basic accessibility checks › page has a top-level heading</p>
+        
+        
+        
+      </article>
+      <article class="test pass" data-test data-status="passed">
+        <div class="test-head">
+          <span class="badge pass">PASS</span>
+          <span class="test-title">images have alternative text attributes</span>
+          <span class="duration">1.56 s</span>
+        </div>
+        <p class="path">src/tests/accessibility.spec.js:37 · chromium › accessibility.spec.js › Basic accessibility checks › images have alternative text attributes</p>
+        
+        
+        
+      </article>
+      <article class="test pass" data-test data-status="passed">
+        <div class="test-head">
+          <span class="badge pass">PASS</span>
+          <span class="test-title">element IDs are unique</span>
+          <span class="duration">1.48 s</span>
+        </div>
+        <p class="path">src/tests/accessibility.spec.js:69 · chromium › accessibility.spec.js › Basic accessibility checks › element IDs are unique</p>
+        
+        
+        
+      </article>
+      <article class="test pass" data-test data-status="passed">
+        <div class="test-head">
+          <span class="badge pass">PASS</span>
+          <span class="test-title">links and buttons have accessible names</span>
+          <span class="duration">1.53 s</span>
+        </div>
+        <p class="path">src/tests/accessibility.spec.js:95 · chromium › accessibility.spec.js › Basic accessibility checks › links and buttons have accessible names</p>
+        
+        
+        
+      </article>
+        </section>
+        <section class="group" data-group>
+          <h2>src/tests/forms.spec.js</h2>
+          
+      <article class="test pass" data-test data-status="passed">
+        <div class="test-head">
+          <span class="badge pass">PASS</span>
+          <span class="test-title">forms are detected on the homepage</span>
+          <span class="duration">1.50 s</span>
+        </div>
+        <p class="path">src/tests/forms.spec.js:21 · chromium › forms.spec.js › Form detection and basic validation › forms are detected on the homepage</p>
+        
+        
+        
+      </article>
+      <article class="test pass" data-test data-status="passed">
+        <div class="test-head">
+          <span class="badge pass">PASS</span>
+          <span class="test-title">visible form controls have accessible labels</span>
+          <span class="duration">1.48 s</span>
+        </div>
+        <p class="path">src/tests/forms.spec.js:45 · chromium › forms.spec.js › Form detection and basic validation › visible form controls have accessible labels</p>
+        
+        
+        
+      </article>
+        </section>
+        <section class="group" data-group>
+          <h2>src/tests/images.spec.js</h2>
+          
+      <article class="test pass" data-test data-status="passed">
+        <div class="test-head">
+          <span class="badge pass">PASS</span>
+          <span class="test-title">images load successfully</span>
+          <span class="duration">2.13 s</span>
+        </div>
+        <p class="path">src/tests/images.spec.js:14 · chromium › images.spec.js › images load successfully</p>
+        
+        
+        
+      </article>
+        </section>
+        <section class="group" data-group>
+          <h2>src/tests/links.spec.js</h2>
+          
+      <article class="test pass" data-test data-status="passed">
+        <div class="test-head">
+          <span class="badge pass">PASS</span>
+          <span class="test-title">internal links resolve without HTTP errors</span>
+          <span class="duration">2.47 s</span>
+        </div>
+        <p class="path">src/tests/links.spec.js:17 · chromium › links.spec.js › internal links resolve without HTTP errors</p>
+        
+        
+        
+      </article>
+        </section>
+        <section class="group" data-group>
+          <h2>src/tests/navigation.spec.js</h2>
+          
+      <article class="test pass" data-test data-status="passed">
+        <div class="test-head">
+          <span class="badge pass">PASS</span>
+          <span class="test-title">homepage is reachable and returns a successful HTTP status</span>
+          <span class="duration">1.53 s</span>
+        </div>
+        <p class="path">src/tests/navigation.spec.js:23 · chromium › navigation.spec.js › Homepage, loading, and basic performance › homepage is reachable and returns a successful HTTP status</p>
+        <div class="chips"><span class="chip">http-status: 200</span></div>
+        
+        
+      </article>
+      <article class="test pass" data-test data-status="passed">
+        <div class="test-head">
+          <span class="badge pass">PASS</span>
+          <span class="test-title">homepage has a non-empty page title</span>
+          <span class="duration">1.51 s</span>
+        </div>
+        <p class="path">src/tests/navigation.spec.js:47 · chromium › navigation.spec.js › Homepage, loading, and basic performance › homepage has a non-empty page title</p>
+        <div class="chips"><span class="chip">page-title: Login | DERMAGA JTI</span></div>
+        
+        
+      </article>
+      <article class="test pass" data-test data-status="passed">
+        <div class="test-head">
+          <span class="badge pass">PASS</span>
+          <span class="test-title">page finishes loading and renders a body</span>
+          <span class="duration">1.55 s</span>
+        </div>
+        <p class="path">src/tests/navigation.spec.js:56 · chromium › navigation.spec.js › Homepage, loading, and basic performance › page finishes loading and renders a body</p>
+        
+        
+        
+      </article>
+      <article class="test pass" data-test data-status="passed">
+        <div class="test-head">
+          <span class="badge pass">PASS</span>
+          <span class="test-title">basic navigation performance stays within configured budgets</span>
+          <span class="duration">1.56 s</span>
+        </div>
+        <p class="path">src/tests/navigation.spec.js:96 · chromium › navigation.spec.js › Homepage, loading, and basic performance › basic navigation performance stays within configured budgets</p>
+        
+        
+        
+      </article>
+      <article class="test skip" data-test data-status="skipped">
+        <div class="test-head">
+          <span class="badge skip">SKIP</span>
+          <span class="test-title">primary navigation exists and contains usable links</span>
+          <span class="duration">1.47 s</span>
+        </div>
+        <p class="path">src/tests/navigation.spec.js:121 · chromium › navigation.spec.js › Homepage, loading, and basic performance › primary navigation exists and contains usable links</p>
+        
+        <div class="notes skip"><strong>Skip reason:</strong> No visible navigation links were found in &lt;nav&gt;, [role=&quot;navigation&quot;], or &lt;header&gt;.</div>
+        
+      </article>
+      <article class="test pass" data-test data-status="passed">
+        <div class="test-head">
+          <span class="badge pass">PASS</span>
+          <span class="test-title">no JavaScript console errors on the homepage</span>
+          <span class="duration">2.55 s</span>
+        </div>
+        <p class="path">src/tests/navigation.spec.js:151 · chromium › navigation.spec.js › Homepage, loading, and basic performance › no JavaScript console errors on the homepage</p>
+        <div class="chips"><span class="chip">console-errors: 0</span></div>
+        
+        
+      </article>
+      <article class="test pass" data-test data-status="passed">
+        <div class="test-head">
+          <span class="badge pass">PASS</span>
+          <span class="test-title">no uncaught page errors on the homepage</span>
+          <span class="duration">2.47 s</span>
+        </div>
+        <p class="path">src/tests/navigation.spec.js:172 · chromium › navigation.spec.js › Homepage, loading, and basic performance › no uncaught page errors on the homepage</p>
+        
+        
+        
+      </article>
+        </section>
+        <section class="group" data-group>
+          <h2>src/tests/responsive.spec.js</h2>
+          
+      <article class="test fail" data-test data-status="failed">
+        <div class="test-head">
+          <span class="badge fail">FAIL</span>
+          <span class="test-title">renders without horizontal overflow at 1440x900</span>
+          <span class="duration">2.74 s</span>
+        </div>
+        <p class="path">src/tests/responsive.spec.js:19 · chromium › responsive.spec.js › Responsive layout - desktop (1440x900) › renders without horizontal overflow at 1440x900</p>
+        
+        <div class="notes fail"><strong>Error detail</strong><pre>Error: Horizontal overflow is 360px (tolerance 2px). Possible offenders: []
+
+expect(received).toBeLessThanOrEqual(expected)
+
+Expected: &lt;= 2
+Received:    360
+Error: Horizontal overflow is 360px (tolerance 2px). Possible offenders: []
+
+expect(received).toBeLessThanOrEqual(expected)
+
+Expected: &lt;= 2
+Received:    360
+    at /app/src/tests/responsive.spec.js:111:9</pre></div>
+        <div class="attachments"><div class="attachment"><a href="test-results/responsive-Responsive-layo-44a83-zontal-overflow-at-1440x900-chromium/attachments/responsive-desktop-27dc9dc4f0563555ebea3060ab878eb0f54171af.png" target="_blank" rel="noreferrer"><img src="test-results/responsive-Responsive-layo-44a83-zontal-overflow-at-1440x900-chromium/attachments/responsive-desktop-27dc9dc4f0563555ebea3060ab878eb0f54171af.png" alt="responsive-desktop" loading="lazy"><span>responsive-desktop</span></a></div><div class="attachment"><a href="test-results/responsive-Responsive-layo-44a83-zontal-overflow-at-1440x900-chromium/test-failed-1.png" target="_blank" rel="noreferrer"><img src="test-results/responsive-Responsive-layo-44a83-zontal-overflow-at-1440x900-chromium/test-failed-1.png" alt="screenshot" loading="lazy"><span>screenshot</span></a></div><div class="attachment"><a href="test-results/responsive-Responsive-layo-44a83-zontal-overflow-at-1440x900-chromium/attachments/failure-screenshot-6f580c20157c934b87312661f47b394a89fc4277.png" target="_blank" rel="noreferrer"><img src="test-results/responsive-Responsive-layo-44a83-zontal-overflow-at-1440x900-chromium/attachments/failure-screenshot-6f580c20157c934b87312661f47b394a89fc4277.png" alt="failure-screenshot" loading="lazy"><span>failure-screenshot</span></a></div><div class="attachment"><a href="test-results/responsive-Responsive-layo-44a83-zontal-overflow-at-1440x900-chromium/error-context.md" target="_blank" rel="noreferrer">error-context</a></div><div class="attachment"><a href="test-results/responsive-Responsive-layo-44a83-zontal-overflow-at-1440x900-chromium/trace.zip" target="_blank" rel="noreferrer">trace</a></div></div>
+      </article>
+      <article class="test fail" data-test data-status="failed">
+        <div class="test-head">
+          <span class="badge fail">FAIL</span>
+          <span class="test-title">renders without horizontal overflow at 810x1080</span>
+          <span class="duration">2.79 s</span>
+        </div>
+        <p class="path">src/tests/responsive.spec.js:19 · chromium › responsive.spec.js › Responsive layout - tablet (810x1080) › renders without horizontal overflow at 810x1080</p>
+        
+        <div class="notes fail"><strong>Error detail</strong><pre>Error: Horizontal overflow is 203px (tolerance 2px). Possible offenders: []
+
+expect(received).toBeLessThanOrEqual(expected)
+
+Expected: &lt;= 2
+Received:    203
+Error: Horizontal overflow is 203px (tolerance 2px). Possible offenders: []
+
+expect(received).toBeLessThanOrEqual(expected)
+
+Expected: &lt;= 2
+Received:    203
+    at /app/src/tests/responsive.spec.js:111:9</pre></div>
+        <div class="attachments"><div class="attachment"><a href="test-results/responsive-Responsive-layo-5db9e-zontal-overflow-at-810x1080-chromium/attachments/responsive-tablet-53128b968e65a84f10d75f112290a1dff0915369.png" target="_blank" rel="noreferrer"><img src="test-results/responsive-Responsive-layo-5db9e-zontal-overflow-at-810x1080-chromium/attachments/responsive-tablet-53128b968e65a84f10d75f112290a1dff0915369.png" alt="responsive-tablet" loading="lazy"><span>responsive-tablet</span></a></div><div class="attachment"><a href="test-results/responsive-Responsive-layo-5db9e-zontal-overflow-at-810x1080-chromium/test-failed-1.png" target="_blank" rel="noreferrer"><img src="test-results/responsive-Responsive-layo-5db9e-zontal-overflow-at-810x1080-chromium/test-failed-1.png" alt="screenshot" loading="lazy"><span>screenshot</span></a></div><div class="attachment"><a href="test-results/responsive-Responsive-layo-5db9e-zontal-overflow-at-810x1080-chromium/attachments/failure-screenshot-94cff1e8b0303fa9afa99027019e60da8099f79e.png" target="_blank" rel="noreferrer"><img src="test-results/responsive-Responsive-layo-5db9e-zontal-overflow-at-810x1080-chromium/attachments/failure-screenshot-94cff1e8b0303fa9afa99027019e60da8099f79e.png" alt="failure-screenshot" loading="lazy"><span>failure-screenshot</span></a></div><div class="attachment"><a href="test-results/responsive-Responsive-layo-5db9e-zontal-overflow-at-810x1080-chromium/error-context.md" target="_blank" rel="noreferrer">error-context</a></div><div class="attachment"><a href="test-results/responsive-Responsive-layo-5db9e-zontal-overflow-at-810x1080-chromium/trace.zip" target="_blank" rel="noreferrer">trace</a></div></div>
+      </article>
+      <article class="test fail" data-test data-status="failed">
+        <div class="test-head">
+          <span class="badge fail">FAIL</span>
+          <span class="test-title">renders without horizontal overflow at 390x844</span>
+          <span class="duration">1.61 s</span>
+        </div>
+        <p class="path">src/tests/responsive.spec.js:19 · chromium › responsive.spec.js › Responsive layout - mobile (390x844) › renders without horizontal overflow at 390x844</p>
+        
+        <div class="notes fail"><strong>Error detail</strong><pre>Error: Horizontal overflow is 98px (tolerance 2px). Possible offenders: []
+
+expect(received).toBeLessThanOrEqual(expected)
+
+Expected: &lt;= 2
+Received:    98
+Error: Horizontal overflow is 98px (tolerance 2px). Possible offenders: []
+
+expect(received).toBeLessThanOrEqual(expected)
+
+Expected: &lt;= 2
+Received:    98
+    at /app/src/tests/responsive.spec.js:111:9</pre></div>
+        <div class="attachments"><div class="attachment"><a href="test-results/responsive-Responsive-layo-53366-izontal-overflow-at-390x844-chromium/attachments/responsive-mobile-edb6b0a9aaff2f9d6b67b3b5886d4fa68a85b486.png" target="_blank" rel="noreferrer"><img src="test-results/responsive-Responsive-layo-53366-izontal-overflow-at-390x844-chromium/attachments/responsive-mobile-edb6b0a9aaff2f9d6b67b3b5886d4fa68a85b486.png" alt="responsive-mobile" loading="lazy"><span>responsive-mobile</span></a></div><div class="attachment"><a href="test-results/responsive-Responsive-layo-53366-izontal-overflow-at-390x844-chromium/test-failed-1.png" target="_blank" rel="noreferrer"><img src="test-results/responsive-Responsive-layo-53366-izontal-overflow-at-390x844-chromium/test-failed-1.png" alt="screenshot" loading="lazy"><span>screenshot</span></a></div><div class="attachment"><a href="test-results/responsive-Responsive-layo-53366-izontal-overflow-at-390x844-chromium/attachments/failure-screenshot-e125a6e3ff4fe42e6c7e3d470f81b2214949fcf0.png" target="_blank" rel="noreferrer"><img src="test-results/responsive-Responsive-layo-53366-izontal-overflow-at-390x844-chromium/attachments/failure-screenshot-e125a6e3ff4fe42e6c7e3d470f81b2214949fcf0.png" alt="failure-screenshot" loading="lazy"><span>failure-screenshot</span></a></div><div class="attachment"><a href="test-results/responsive-Responsive-layo-53366-izontal-overflow-at-390x844-chromium/error-context.md" target="_blank" rel="noreferrer">error-context</a></div><div class="attachment"><a href="test-results/responsive-Responsive-layo-53366-izontal-overflow-at-390x844-chromium/trace.zip" target="_blank" rel="noreferrer">trace</a></div></div>
+      </article>
+        </section>
+
+  <footer>
+    SKIP means the feature/element was not present, so the test was not executed; it is never counted as PASS.
+    This report was generated by a read-only test suite. Only test websites you own or are authorized to test.
+  </footer>
+</div>
+<script>
+  const buttons = Array.from(document.querySelectorAll('[data-filter]'));
+  const tests = Array.from(document.querySelectorAll('[data-test]'));
+  const groups = Array.from(document.querySelectorAll('[data-group]'));
+
+  for (const button of buttons) {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.filter;
+      for (const item of buttons) item.classList.toggle('active', item === button);
+      for (const test of tests) {
+        test.hidden = filter !== 'all' && test.dataset.status !== filter;
+      }
+      for (const group of groups) {
+        const visible = Array.from(group.querySelectorAll('[data-test]')).some((test) => !test.hidden);
+        group.hidden = !visible;
+      }
+    });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,661 @@
+{
+  "tool": "Universal Website Testing Tool",
+  "version": "1.0.0",
+  "targetUrl": "https://jti.polinema.ac.id/dermaga",
+  "browser": "chromium",
+  "generatedAt": "2026-11-06T07:59:35.698Z",
+  "runStatus": "failed",
+  "startTime": "2026-11-06T07:58:55.458Z",
+  "durationMs": 40240,
+  "totals": {
+    "total": 19,
+    "passed": 15,
+    "failed": 3,
+    "skipped": 1,
+    "executed": 18,
+    "passRatePercent": 83.3
+  },
+  "configuration": {
+    "maxPages": 10,
+    "maxDepth": 1,
+    "maxLinks": 50,
+    "maxImages": 50,
+    "maxForms": 10,
+    "navTimeoutMs": 30000,
+    "testTimeoutMs": 120000,
+    "detectSoft404": false,
+    "ignoreHttpsErrors": false
+  },
+  "tests": [
+    {
+      "title": "document declares a language",
+      "titlePath": [
+        "chromium",
+        "accessibility.spec.js",
+        "Basic accessibility checks",
+        "document declares a language"
+      ],
+      "fullTitle": "chromium › accessibility.spec.js › Basic accessibility checks › document declares a language",
+      "file": "src/tests/accessibility.spec.js",
+      "line": 7,
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 2495,
+      "retry": 0,
+      "errors": [],
+      "skipReason": "",
+      "annotations": [],
+      "attachments": []
+    },
+    {
+      "title": "page has a top-level heading",
+      "titlePath": [
+        "chromium",
+        "accessibility.spec.js",
+        "Basic accessibility checks",
+        "page has a top-level heading"
+      ],
+      "fullTitle": "chromium › accessibility.spec.js › Basic accessibility checks › page has a top-level heading",
+      "file": "src/tests/accessibility.spec.js",
+      "line": 20,
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 1663,
+      "retry": 0,
+      "errors": [],
+      "skipReason": "",
+      "annotations": [],
+      "attachments": [
+        {
+          "name": "h1-headings.json",
+          "contentType": "application/json",
+          "path": null,
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "images have alternative text attributes",
+      "titlePath": [
+        "chromium",
+        "accessibility.spec.js",
+        "Basic accessibility checks",
+        "images have alternative text attributes"
+      ],
+      "fullTitle": "chromium › accessibility.spec.js › Basic accessibility checks › images have alternative text attributes",
+      "file": "src/tests/accessibility.spec.js",
+      "line": 37,
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 1561,
+      "retry": 0,
+      "errors": [],
+      "skipReason": "",
+      "annotations": [],
+      "attachments": [
+        {
+          "name": "image-alt-check.json",
+          "contentType": "application/json",
+          "path": null,
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "element IDs are unique",
+      "titlePath": [
+        "chromium",
+        "accessibility.spec.js",
+        "Basic accessibility checks",
+        "element IDs are unique"
+      ],
+      "fullTitle": "chromium › accessibility.spec.js › Basic accessibility checks › element IDs are unique",
+      "file": "src/tests/accessibility.spec.js",
+      "line": 69,
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 1483,
+      "retry": 0,
+      "errors": [],
+      "skipReason": "",
+      "annotations": [],
+      "attachments": [
+        {
+          "name": "duplicate-ids.json",
+          "contentType": "application/json",
+          "path": null,
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "links and buttons have accessible names",
+      "titlePath": [
+        "chromium",
+        "accessibility.spec.js",
+        "Basic accessibility checks",
+        "links and buttons have accessible names"
+      ],
+      "fullTitle": "chromium › accessibility.spec.js › Basic accessibility checks › links and buttons have accessible names",
+      "file": "src/tests/accessibility.spec.js",
+      "line": 95,
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 1527,
+      "retry": 0,
+      "errors": [],
+      "skipReason": "",
+      "annotations": [],
+      "attachments": [
+        {
+          "name": "unnamed-interactive-elements.json",
+          "contentType": "application/json",
+          "path": null,
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "forms are detected on the homepage",
+      "titlePath": [
+        "chromium",
+        "forms.spec.js",
+        "Form detection and basic validation",
+        "forms are detected on the homepage"
+      ],
+      "fullTitle": "chromium › forms.spec.js › Form detection and basic validation › forms are detected on the homepage",
+      "file": "src/tests/forms.spec.js",
+      "line": 21,
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 1504,
+      "retry": 0,
+      "errors": [],
+      "skipReason": "",
+      "annotations": [],
+      "attachments": [
+        {
+          "name": "forms-inspection.json",
+          "contentType": "application/json",
+          "path": null,
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "visible form controls have accessible labels",
+      "titlePath": [
+        "chromium",
+        "forms.spec.js",
+        "Form detection and basic validation",
+        "visible form controls have accessible labels"
+      ],
+      "fullTitle": "chromium › forms.spec.js › Form detection and basic validation › visible form controls have accessible labels",
+      "file": "src/tests/forms.spec.js",
+      "line": 45,
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 1483,
+      "retry": 0,
+      "errors": [],
+      "skipReason": "",
+      "annotations": [],
+      "attachments": [
+        {
+          "name": "form-labels.json",
+          "contentType": "application/json",
+          "path": null,
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "images load successfully",
+      "titlePath": [
+        "chromium",
+        "images.spec.js",
+        "images load successfully"
+      ],
+      "fullTitle": "chromium › images.spec.js › images load successfully",
+      "file": "src/tests/images.spec.js",
+      "line": 14,
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 2135,
+      "retry": 0,
+      "errors": [],
+      "skipReason": "",
+      "annotations": [],
+      "attachments": [
+        {
+          "name": "images-found.json",
+          "contentType": "application/json",
+          "path": null,
+          "href": null
+        },
+        {
+          "name": "image-check-results.json",
+          "contentType": "application/json",
+          "path": null,
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "internal links resolve without HTTP errors",
+      "titlePath": [
+        "chromium",
+        "links.spec.js",
+        "internal links resolve without HTTP errors"
+      ],
+      "fullTitle": "chromium › links.spec.js › internal links resolve without HTTP errors",
+      "file": "src/tests/links.spec.js",
+      "line": 17,
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 2470,
+      "retry": 0,
+      "errors": [],
+      "skipReason": "",
+      "annotations": [],
+      "attachments": [
+        {
+          "name": "collected-links.json",
+          "contentType": "application/json",
+          "path": null,
+          "href": null
+        },
+        {
+          "name": "link-check-results.json",
+          "contentType": "application/json",
+          "path": null,
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "homepage is reachable and returns a successful HTTP status",
+      "titlePath": [
+        "chromium",
+        "navigation.spec.js",
+        "Homepage, loading, and basic performance",
+        "homepage is reachable and returns a successful HTTP status"
+      ],
+      "fullTitle": "chromium › navigation.spec.js › Homepage, loading, and basic performance › homepage is reachable and returns a successful HTTP status",
+      "file": "src/tests/navigation.spec.js",
+      "line": 23,
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 1532,
+      "retry": 0,
+      "errors": [],
+      "skipReason": "",
+      "annotations": [
+        {
+          "type": "http-status",
+          "description": "200"
+        }
+      ],
+      "attachments": [
+        {
+          "name": "homepage-metadata.json",
+          "contentType": "application/json",
+          "path": null,
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "homepage has a non-empty page title",
+      "titlePath": [
+        "chromium",
+        "navigation.spec.js",
+        "Homepage, loading, and basic performance",
+        "homepage has a non-empty page title"
+      ],
+      "fullTitle": "chromium › navigation.spec.js › Homepage, loading, and basic performance › homepage has a non-empty page title",
+      "file": "src/tests/navigation.spec.js",
+      "line": 47,
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 1511,
+      "retry": 0,
+      "errors": [],
+      "skipReason": "",
+      "annotations": [
+        {
+          "type": "page-title",
+          "description": "Login | DERMAGA JTI"
+        }
+      ],
+      "attachments": []
+    },
+    {
+      "title": "page finishes loading and renders a body",
+      "titlePath": [
+        "chromium",
+        "navigation.spec.js",
+        "Homepage, loading, and basic performance",
+        "page finishes loading and renders a body"
+      ],
+      "fullTitle": "chromium › navigation.spec.js › Homepage, loading, and basic performance › page finishes loading and renders a body",
+      "file": "src/tests/navigation.spec.js",
+      "line": 56,
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 1550,
+      "retry": 0,
+      "errors": [],
+      "skipReason": "",
+      "annotations": [],
+      "attachments": [
+        {
+          "name": "load-state.json",
+          "contentType": "application/json",
+          "path": null,
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "basic navigation performance stays within configured budgets",
+      "titlePath": [
+        "chromium",
+        "navigation.spec.js",
+        "Homepage, loading, and basic performance",
+        "basic navigation performance stays within configured budgets"
+      ],
+      "fullTitle": "chromium › navigation.spec.js › Homepage, loading, and basic performance › basic navigation performance stays within configured budgets",
+      "file": "src/tests/navigation.spec.js",
+      "line": 96,
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 1557,
+      "retry": 0,
+      "errors": [],
+      "skipReason": "",
+      "annotations": [],
+      "attachments": [
+        {
+          "name": "navigation-timing.json",
+          "contentType": "application/json",
+          "path": null,
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "primary navigation exists and contains usable links",
+      "titlePath": [
+        "chromium",
+        "navigation.spec.js",
+        "Homepage, loading, and basic performance",
+        "primary navigation exists and contains usable links"
+      ],
+      "fullTitle": "chromium › navigation.spec.js › Homepage, loading, and basic performance › primary navigation exists and contains usable links",
+      "file": "src/tests/navigation.spec.js",
+      "line": 121,
+      "status": "skipped",
+      "expectedStatus": "skipped",
+      "durationMs": 1473,
+      "retry": 0,
+      "errors": [],
+      "skipReason": "No visible navigation links were found in <nav>, [role=\"navigation\"], or <header>.",
+      "annotations": [],
+      "attachments": [
+        {
+          "name": "navigation-links.json",
+          "contentType": "application/json",
+          "path": null,
+          "href": null
+        }
+      ]
+    },
+    {
+      "title": "no JavaScript console errors on the homepage",
+      "titlePath": [
+        "chromium",
+        "navigation.spec.js",
+        "Homepage, loading, and basic performance",
+        "no JavaScript console errors on the homepage"
+      ],
+      "fullTitle": "chromium › navigation.spec.js › Homepage, loading, and basic performance › no JavaScript console errors on the homepage",
+      "file": "src/tests/navigation.spec.js",
+      "line": 151,
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 2553,
+      "retry": 0,
+      "errors": [],
+      "skipReason": "",
+      "annotations": [
+        {
+          "type": "console-errors",
+          "description": "0"
+        }
+      ],
+      "attachments": []
+    },
+    {
+      "title": "no uncaught page errors on the homepage",
+      "titlePath": [
+        "chromium",
+        "navigation.spec.js",
+        "Homepage, loading, and basic performance",
+        "no uncaught page errors on the homepage"
+      ],
+      "fullTitle": "chromium › navigation.spec.js › Homepage, loading, and basic performance › no uncaught page errors on the homepage",
+      "file": "src/tests/navigation.spec.js",
+      "line": 172,
+      "status": "passed",
+      "expectedStatus": "passed",
+      "durationMs": 2474,
+      "retry": 0,
+      "errors": [],
+      "skipReason": "",
+      "annotations": [],
+      "attachments": []
+    },
+    {
+      "title": "renders without horizontal overflow at 1440x900",
+      "titlePath": [
+        "chromium",
+        "responsive.spec.js",
+        "Responsive layout - desktop (1440x900)",
+        "renders without horizontal overflow at 1440x900"
+      ],
+      "fullTitle": "chromium › responsive.spec.js › Responsive layout - desktop (1440x900) › renders without horizontal overflow at 1440x900",
+      "file": "src/tests/responsive.spec.js",
+      "line": 19,
+      "status": "failed",
+      "expectedStatus": "passed",
+      "durationMs": 2738,
+      "retry": 0,
+      "errors": [
+        {
+          "message": "Error: Horizontal overflow is 360px (tolerance 2px). Possible offenders: []\n\nexpect(received).toBeLessThanOrEqual(expected)\n\nExpected: <= 2\nReceived:    360",
+          "stack": "Error: Horizontal overflow is 360px (tolerance 2px). Possible offenders: []\n\nexpect(received).toBeLessThanOrEqual(expected)\n\nExpected: <= 2\nReceived:    360\n    at /app/src/tests/responsive.spec.js:111:9",
+          "location": {
+            "file": "/app/src/tests/responsive.spec.js",
+            "column": 9,
+            "line": 111
+          }
+        }
+      ],
+      "skipReason": "",
+      "annotations": [],
+      "attachments": [
+        {
+          "name": "layout-metrics.json",
+          "contentType": "application/json",
+          "path": null,
+          "href": null
+        },
+        {
+          "name": "responsive-desktop",
+          "contentType": "image/png",
+          "path": "/app/reports/test-results/responsive-Responsive-layo-44a83-zontal-overflow-at-1440x900-chromium/attachments/responsive-desktop-27dc9dc4f0563555ebea3060ab878eb0f54171af.png",
+          "href": "test-results/responsive-Responsive-layo-44a83-zontal-overflow-at-1440x900-chromium/attachments/responsive-desktop-27dc9dc4f0563555ebea3060ab878eb0f54171af.png"
+        },
+        {
+          "name": "screenshot",
+          "contentType": "image/png",
+          "path": "/app/reports/test-results/responsive-Responsive-layo-44a83-zontal-overflow-at-1440x900-chromium/test-failed-1.png",
+          "href": "test-results/responsive-Responsive-layo-44a83-zontal-overflow-at-1440x900-chromium/test-failed-1.png"
+        },
+        {
+          "name": "failure-screenshot",
+          "contentType": "image/png",
+          "path": "/app/reports/test-results/responsive-Responsive-layo-44a83-zontal-overflow-at-1440x900-chromium/attachments/failure-screenshot-6f580c20157c934b87312661f47b394a89fc4277.png",
+          "href": "test-results/responsive-Responsive-layo-44a83-zontal-overflow-at-1440x900-chromium/attachments/failure-screenshot-6f580c20157c934b87312661f47b394a89fc4277.png"
+        },
+        {
+          "name": "error-context",
+          "contentType": "text/markdown",
+          "path": "/app/reports/test-results/responsive-Responsive-layo-44a83-zontal-overflow-at-1440x900-chromium/error-context.md",
+          "href": "test-results/responsive-Responsive-layo-44a83-zontal-overflow-at-1440x900-chromium/error-context.md"
+        },
+        {
+          "name": "trace",
+          "contentType": "application/zip",
+          "path": "/app/reports/test-results/responsive-Responsive-layo-44a83-zontal-overflow-at-1440x900-chromium/trace.zip",
+          "href": "test-results/responsive-Responsive-layo-44a83-zontal-overflow-at-1440x900-chromium/trace.zip"
+        }
+      ]
+    },
+    {
+      "title": "renders without horizontal overflow at 810x1080",
+      "titlePath": [
+        "chromium",
+        "responsive.spec.js",
+        "Responsive layout - tablet (810x1080)",
+        "renders without horizontal overflow at 810x1080"
+      ],
+      "fullTitle": "chromium › responsive.spec.js › Responsive layout - tablet (810x1080) › renders without horizontal overflow at 810x1080",
+      "file": "src/tests/responsive.spec.js",
+      "line": 19,
+      "status": "failed",
+      "expectedStatus": "passed",
+      "durationMs": 2785,
+      "retry": 0,
+      "errors": [
+        {
+          "message": "Error: Horizontal overflow is 203px (tolerance 2px). Possible offenders: []\n\nexpect(received).toBeLessThanOrEqual(expected)\n\nExpected: <= 2\nReceived:    203",
+          "stack": "Error: Horizontal overflow is 203px (tolerance 2px). Possible offenders: []\n\nexpect(received).toBeLessThanOrEqual(expected)\n\nExpected: <= 2\nReceived:    203\n    at /app/src/tests/responsive.spec.js:111:9",
+          "location": {
+            "file": "/app/src/tests/responsive.spec.js",
+            "column": 9,
+            "line": 111
+          }
+        }
+      ],
+      "skipReason": "",
+      "annotations": [],
+      "attachments": [
+        {
+          "name": "layout-metrics.json",
+          "contentType": "application/json",
+          "path": null,
+          "href": null
+        },
+        {
+          "name": "responsive-tablet",
+          "contentType": "image/png",
+          "path": "/app/reports/test-results/responsive-Responsive-layo-5db9e-zontal-overflow-at-810x1080-chromium/attachments/responsive-tablet-53128b968e65a84f10d75f112290a1dff0915369.png",
+          "href": "test-results/responsive-Responsive-layo-5db9e-zontal-overflow-at-810x1080-chromium/attachments/responsive-tablet-53128b968e65a84f10d75f112290a1dff0915369.png"
+        },
+        {
+          "name": "screenshot",
+          "contentType": "image/png",
+          "path": "/app/reports/test-results/responsive-Responsive-layo-5db9e-zontal-overflow-at-810x1080-chromium/test-failed-1.png",
+          "href": "test-results/responsive-Responsive-layo-5db9e-zontal-overflow-at-810x1080-chromium/test-failed-1.png"
+        },
+        {
+          "name": "failure-screenshot",
+          "contentType": "image/png",
+          "path": "/app/reports/test-results/responsive-Responsive-layo-5db9e-zontal-overflow-at-810x1080-chromium/attachments/failure-screenshot-94cff1e8b0303fa9afa99027019e60da8099f79e.png",
+          "href": "test-results/responsive-Responsive-layo-5db9e-zontal-overflow-at-810x1080-chromium/attachments/failure-screenshot-94cff1e8b0303fa9afa99027019e60da8099f79e.png"
+        },
+        {
+          "name": "error-context",
+          "contentType": "text/markdown",
+          "path": "/app/reports/test-results/responsive-Responsive-layo-5db9e-zontal-overflow-at-810x1080-chromium/error-context.md",
+          "href": "test-results/responsive-Responsive-layo-5db9e-zontal-overflow-at-810x1080-chromium/error-context.md"
+        },
+        {
+          "name": "trace",
+          "contentType": "application/zip",
+          "path": "/app/reports/test-results/responsive-Responsive-layo-5db9e-zontal-overflow-at-810x1080-chromium/trace.zip",
+          "href": "test-results/responsive-Responsive-layo-5db9e-zontal-overflow-at-810x1080-chromium/trace.zip"
+        }
+      ]
+    },
+    {
+      "title": "renders without horizontal overflow at 390x844",
+      "titlePath": [
+        "chromium",
+        "responsive.spec.js",
+        "Responsive layout - mobile (390x844)",
+        "renders without horizontal overflow at 390x844"
+      ],
+      "fullTitle": "chromium › responsive.spec.js › Responsive layout - mobile (390x844) › renders without horizontal overflow at 390x844",
+      "file": "src/tests/responsive.spec.js",
+      "line": 19,
+      "status": "failed",
+      "expectedStatus": "passed",
+      "durationMs": 1607,
+      "retry": 0,
+      "errors": [
+        {
+          "message": "Error: Horizontal overflow is 98px (tolerance 2px). Possible offenders: []\n\nexpect(received).toBeLessThanOrEqual(expected)\n\nExpected: <= 2\nReceived:    98",
+          "stack": "Error: Horizontal overflow is 98px (tolerance 2px). Possible offenders: []\n\nexpect(received).toBeLessThanOrEqual(expected)\n\nExpected: <= 2\nReceived:    98\n    at /app/src/tests/responsive.spec.js:111:9",
+          "location": {
+            "file": "/app/src/tests/responsive.spec.js",
+            "column": 9,
+            "line": 111
+          }
+        }
+      ],
+      "skipReason": "",
+      "annotations": [],
+      "attachments": [
+        {
+          "name": "layout-metrics.json",
+          "contentType": "application/json",
+          "path": null,
+          "href": null
+        },
+        {
+          "name": "responsive-mobile",
+          "contentType": "image/png",
+          "path": "/app/reports/test-results/responsive-Responsive-layo-53366-izontal-overflow-at-390x844-chromium/attachments/responsive-mobile-edb6b0a9aaff2f9d6b67b3b5886d4fa68a85b486.png",
+          "href": "test-results/responsive-Responsive-layo-53366-izontal-overflow-at-390x844-chromium/attachments/responsive-mobile-edb6b0a9aaff2f9d6b67b3b5886d4fa68a85b486.png"
+        },
+        {
+          "name": "screenshot",
+          "contentType": "image/png",
+          "path": "/app/reports/test-results/responsive-Responsive-layo-53366-izontal-overflow-at-390x844-chromium/test-failed-1.png",
+          "href": "test-results/responsive-Responsive-layo-53366-izontal-overflow-at-390x844-chromium/test-failed-1.png"
+        },
+        {
+          "name": "failure-screenshot",
+          "contentType": "image/png",
+          "path": "/app/reports/test-results/responsive-Responsive-layo-53366-izontal-overflow-at-390x844-chromium/attachments/failure-screenshot-e125a6e3ff4fe42e6c7e3d470f81b2214949fcf0.png",
+          "href": "test-results/responsive-Responsive-layo-53366-izontal-overflow-at-390x844-chromium/attachments/failure-screenshot-e125a6e3ff4fe42e6c7e3d470f81b2214949fcf0.png"
+        },
+        {
+          "name": "error-context",
+          "contentType": "text/markdown",
+          "path": "/app/reports/test-results/responsive-Responsive-layo-53366-izontal-overflow-at-390x844-chromium/error-context.md",
+          "href": "test-results/responsive-Responsive-layo-53366-izontal-overflow-at-390x844-chromium/error-context.md"
+        },
+        {
+          "name": "trace",
+          "contentType": "application/zip",
+          "path": "/app/reports/test-results/responsive-Responsive-layo-53366-izontal-overflow-at-390x844-chromium/trace.zip",
+          "href": "test-results/responsive-Responsive-layo-53366-izontal-overflow-at-390x844-chromium/trace.zip"
+        }
+      ]
+    }
+  ]
+}
